@@ -1,12 +1,11 @@
-/*getting rid of some properties added by defaualt*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+    position: relative;
+    min-height: 100%;
 }
 body {
     box-sizing: border-box; 
+    padding: 2rem;
 }
     
 /*font properties for all the page*/
@@ -16,8 +15,8 @@ body{
     font-size: 12px;
     line-height: 1.5;
     color: rgb(201, 38, 38);
-    padding: 2rem;
-
+    
+   
 }
 /*
 -------HEADER------
@@ -89,3 +88,50 @@ header{
     background-color: rgb(53, 53, 53);
     
 }/*end of search button*/
+
+/*MOVIES*/
+.watchlist-box{
+    padding-left: 3rem;
+    position: fixed;
+    top: 17rem;
+    left:0rem;
+}
+
+/*OLD MOVIES*/ 
+.old-movies-box{
+    position: fixed;
+    bottom:5rem;
+    left: 2rem;
+    border-radius: .5rem;
+    width: 94%;
+    background: rgb(174, 174, 174);
+    margin-bottom: 1rem;
+}
+#old-movies{
+    padding: 0.8rem 0 0.8rem 0.8rem;
+    opacity: 0.8;
+}
+
+/*
+-------FOOTER------
+*/
+
+.footer{
+    position: fixed;
+    bottom:0;
+    background: rgb(53, 53, 53);
+    border-radius: .5rem; 
+    height: 3rem;
+    margin-bottom: 2rem;
+    width: 94%;
+    
+}
+
+#footer_text{
+    position: fixed;
+    right: 5rem;
+    padding-top: .8rem;
+    font-size: .9rem;  
+    color: rgb(157, 157, 157);
+    
+    }
