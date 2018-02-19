@@ -1,0 +1,91 @@
+/*getting rid of some properties added by defaualt*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    box-sizing: border-box; 
+}
+    
+/*font properties for all the page*/
+body{
+    font-family: ;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgb(201, 38, 38);
+    padding: 2rem;
+
+}
+/*
+-------HEADER------
+*/
+header{
+    background-color: rgb(53, 53, 53);
+    border-radius: .5rem;
+}
+/*add button*/
+    .add-movie{
+        color: rgb(255, 255, 255);
+        position: fixed;
+        top: 5rem;
+        right: 9rem;
+       
+    }
+    #add-movie-button{
+        position: fixed;
+        float: right;
+        top: 5rem;
+        right: 5rem;
+        color: rgb(255, 255, 255);
+        background-color: rgb(182, 235, 24);
+        
+        
+    }/*end of add button*/
+
+    .heading{
+        display: block;
+        backface-visibility: hidden;
+        color: rgb(255, 255, 255);
+        padding:1rem 0 0 2rem;}
+        .heading-get {
+            font-weight: 300;
+            font-size: 3rem;
+        }
+        .heading-Reel {
+            font-size: 4rem;
+            color: rgb(182, 235, 24);
+        }
+    .heading-slogan {
+        display: block;
+        font-size: 1rem;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+        padding: 0 0 1rem 2rem;}
+  
+        
+
+/*
+-------MAIN------
+*/
+
+/*search button*/
+.search-movie{
+    color: rgb(255, 255, 255);
+    width: 200px;
+    position: fixed;
+    top: 12rem;
+   
+    
+}
+#search-movie-button{
+    position: fixed;
+    top: 12rem;
+    left:15rem;
+    float: right;
+    color: rgb(255, 255, 255);
+    background-color: rgb(53, 53, 53);
+    
+}/*end of search button*/
