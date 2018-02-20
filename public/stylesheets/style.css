@@ -6,15 +6,19 @@ html {
 body {
     box-sizing: border-box; 
     padding: 2rem;
+    background-color: bisque;
+    
 }
     
 /*font properties for all the page*/
 body{
-    font-family: ;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 12px;
     line-height: 1.5;
     color: rgb(201, 38, 38);
+    
+    
     
    
 }
@@ -48,19 +52,25 @@ header{
         display: block;
         backface-visibility: hidden;
         color: rgb(255, 255, 255);
-        padding:1rem 0 0 2rem;}
+        padding: 1rem 0 0 2rem;
+        font-family: 'Roboto', sans-serif;
+            }
+        
         .heading-get {
-            font-weight: 300;
+            font-weight: 400;
             font-size: 3rem;
+            
         }
         .heading-Reel {
+    
             font-size: 4rem;
             color: rgb(182, 235, 24);
+            font-weight: 500;
         }
     .heading-slogan {
         display: block;
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 200;
         color: rgb(255, 255, 255);
         padding: 0 0 1rem 2rem;}
   
