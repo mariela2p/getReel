@@ -1,147 +1,107 @@
 
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    box-sizing: border-box; 
-    padding: 2rem;
-    background-color: bisque;
-    
-}
-    
-/*font properties for all the page*/
-body{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgb(201, 38, 38);
-    
-    
-    
-   
-}
+
 /*
--------HEADER------
+-------HEADER------------------------------
 */
-header{
-    background-color: rgb(53, 53, 53);
-    border-radius: .5rem;
-}
-/*add button*/
-    .add-movie{
-        color: rgb(255, 255, 255);
-        position: fixed;
-        top: 5rem;
-        right: 9rem;
-       
-    }
-    #add-movie-button{
-        position: fixed;
-        float: right;
-        top: 5rem;
-        right: 5rem;
-        color: rgb(255, 255, 255);
-        background-color: rgb(182, 235, 24);
-        
-        
-    }/*end of add button*/
 
-    .heading{
-        display: block;
-        backface-visibility: hidden;
-        color: rgb(255, 255, 255);
-        padding: 1rem 0 0 2rem;
-        font-family: 'Roboto', sans-serif;
-            }
-        
-        .heading-get {
-            font-weight: 400;
-            font-size: 3rem;
-            
-        }
-        .heading-Reel {
+.header{
+    background-color: rgb(26, 26, 26);
+    height: 60px;
+}
+
+/*add input and button*/
+#add-movie-input{
+    margin-top: 15px;
+    margin-right: 15px;
+    border-radius: 0;
+    height: 30px;
+    width: 200px;
+    float:right;
+    background-color: rgb(237, 237, 237);
+    border: none;
+}
+#add-movie-button{
+    margin-top: 15px;
+    border-radius: 0;
+    float: right;
+    height: 30px;
     
-            font-size: 4rem;
-            color: rgb(182, 235, 24);
-            font-weight: 500;
-        }
-    .heading-slogan {
-        display: block;
-        font-size: 1rem;
-        font-weight: 200;
-        color: rgb(255, 255, 255);
-        padding: 0 0 1rem 2rem;}
-  
-        
+}/*end of add button*/
 
 /*
--------MAIN------
+-------MAIN---------------------------------
 */
 
 /*search button*/
-.search-movie{
-    color: rgb(255, 255, 255);
+#search-movie-input{
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 0;
+    height: 30px;
     width: 200px;
-    position: fixed;
-    top: 12rem;
-   
-    
+    float:left;
+    background-color: rgb(237, 237, 237);
+    border: none;
 }
 #search-movie-button{
-    position: fixed;
-    top: 12rem;
-    left:15rem;
-    float: right;
-    color: rgb(255, 255, 255);
-    background-color: rgb(53, 53, 53);
+    margin-top: 15px;
+    margin-right: 15px;
+    border-radius: 0;
+    float: left;
+    height: 30px;
     
-}/*end of search button*/
-
-/*MOVIES*/
-.watchlist-box{
-    padding-left: 3rem;
-    position: fixed;
-    top: 17rem;
-    left:0rem;
 }
 
-/*OLD MOVIES*/ 
-.old-movies-box{
-    position: fixed;
-    bottom:5rem;
-    left: 2rem;
-    border-radius: .5rem;
-    width: 94%;
-    background: rgb(174, 174, 174);
-    margin-bottom: 1rem;
-}
-#old-movies{
-    padding: 0.8rem 0 0.8rem 0.8rem;
-    opacity: 0.8;
-}
+/*Movies*/
 
+#movies-container{
+    margin:30px;
+}
+#movie-box{
+    background-color: black;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 15px;
+    
+}
+.img-responsive{
+    max-width: 100%; 
+    height: auto;
+   }
+
+#movie-buttons{
+
+    color:white;
+    background-color: black;
+    max-width: 100%; 
+    height: 35px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin:0;
+    }
+#movie-button-info, #movie-button-trailer{
+    margin-top: 7px;
+}
 /*
--------FOOTER------
+-------FOOTER---------------------------------
 */
 
 .footer{
     position: fixed;
     bottom:0;
-    background: rgb(53, 53, 53);
-    border-radius: .5rem; 
-    height: 3rem;
-    margin-bottom: 2rem;
-    width: 94%;
+    background: rgb(26, 26, 26);
+    height: 50px;
+    width: 100%;
     
 }
 
 #footer_text{
-    position: fixed;
-    right: 5rem;
-    padding-top: .8rem;
-    font-size: .9rem;  
-    color: rgb(157, 157, 157);
-    
+    float:right;
+    margin-right: 25px;
+    margin-top: 18px;
+    font-size: 12px;  
+    color: rgb(199, 198, 198);
+    font-family: 'Roboto', sans-serif;
     }
+
+    
