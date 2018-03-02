@@ -1,0 +1,223 @@
+<!-- ==============================================
+		HEADER
+=============================================== -->
+
+<header class="header">
+  	<div class="row" id="header_text-box">
+  		<div class="col-7">
+			<img id="logo" src="assets/images/logo2.png">
+		  </div>
+
+  	
+
+
+  		<div class="col-5" id="add-movie">
+			<form action='/api/new/movie' method=POST>
+			<input name="name" type="text" class="form-control" id="add-movie-input" placeholder="Add Movie Name">
+		<button id="add-movie-button"><img id="add-movie-image" src="assets/images/addBtn.jpg"></button>
+			</form>
+		</div>
+	</div>
+</header>
+<main >
+<!-- ==============================================
+		MOVIES WATCHLIST
+=============================================== -->
+<div class="row" id="sort-box">
+	<div id="sortYear-box">
+		<form action='/year' method=GET>
+			<button id="sortYear-button"><img id="sortYear-img" src="assets/images/sortYearBtn.jpg"></button>
+		</form>
+	</div>
+
+	<div id="sortRating-box">
+		<form action='/rating' method=GET>
+			<button id="sortRating-button"><img id="sortRating-img" src="assets/images/sortRatingBtn.jpg"></button>
+		</form>
+	</div>
+
+</div>
+<div class="row" id="movies-container">
+	<!--movie box -->
+	
+	{{#each movies}}
+		{{#unless this.watched}}
+	
+		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="movie-box">
+        	<div class="box gallery">
+				<div class="card">
+    				<img class="img-responsive" id="new-movies" src={{this.movie_poster}}>
+    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
+						<div class="info">
+      		        		<div class="foot">
+								<p class="movie-title">{{this.movie_name}}</p>
+								<i class="line"></i>
+								<p class="runtime">{{this.movie_time}}</p>
+							</div>
+     		    		</div>
+     	    	</div>
+        	</div>
+		</div>
+
+	<div id="myModal{{@index}}" class="modal">
+
+  		<!-- Modal content -->
+  		<div class="modal-content">
+   
+    		<div class="row" id="modal-body">
+      			<!--poster -->
+					<div class="col-5" id="search-movie">
+						<img id="selected-movie-poster" src={{this.movie_poster}}>
+					</div>
+
+					<div class="col-7" id="movie-scroll">
+						<!--close BTN -->
+						<span id='closeit{{@index}}' class="close">&times;</span>
+						
+						<div class="container" id="modal-movie-info-box">
+							<!--Movie Title -->
+							<h2 class="movie-title" id="modal-movie-title">{{this.movie_name}}</h2>
+							<!--Year, Runtime & Genre -->
+							<div class="row" id="YRG-box">
+								<div class="col-2" id="year"><h5>{{this.movie_year}}</h5></div>
+								<div class="col-2" id="runtime"><h5>{{this.movie_time}}</h5></div>
+								<div class="col-6" id="genre"><h5>{{this.movie_genre}}</h5></div>
+							</div>
+							<!--Raitings -->
+							<div class="row" id="raitings">
+								<div class="col-3" id="raiting-imdb">
+									<img class="imdb-logo" src="assets/images/imdbLogo.png">
+									<h6 class="imdb-text">{{this.movie_ratingImdb}}</h6>
+								</div>
+								<div class="col-4" id="raiting-roten">
+									<img class="roten-logo" src="assets/images/rotenLogo.png">
+									<h6 class="roten-text">{{this.movie_ratingRotten}}</h6>
+								</div>
+							</div>
+							<!--Director-->
+							<div class="row">
+								<div class="col-10" id="director">	
+									<p><strong>Directed by: </strong>{{this.movie_director}}</p>
+								</div>
+							</div>
+							<!--Cast -->
+							<div class="row">
+								<div class="col-10" id="cast">
+									<p><strong>Starring: </strong>{{this.movie_actors}}</p>
+								</div>
+							</div>
+							<!--Plot -->
+							<div class="row">
+								<div class="col-10" id="plot">	
+									<p><strong>Plot: </strong>{{this.movie_plot}}</p>
+								</div>
+							</div>
+							<!--Watched movies BTN -->
+							<div class="row">
+								<div class="col-md-3">
+								<form action="/api/new/watched/{{this.id}}?_method=PUT" method="POST">
+									<input type="hidden" name="watched" value="true">
+									<button type="submit"><img id="watched-movie-button" src="assets/images/watchedBtn.jpg"></button>
+								</form>
+								</div>
+							<!-- Remove movie button -->
+
+								<div class="col-md-3">
+							<form action="/api/new/delete/{{this.id}}?_method=DELETE" method="POST">
+									<input type="hidden" name="watched" value="true">
+									<button type="submit"><img id="delete-movie-button" src="assets/images/trashItBtn.jpg"></button>
+								</form>
+								</div>
+								<div class="col-md-6"></div>
+							</div>
+							
+							
+						<!-- trailer -->
+						
+							<iframe id="trailer-box" src="https://www.youtube.com/embed/{{this.movie_trailer}}"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						
+
+					</div>
+				
+				</div>
+			
+    		</div>
+  		</div>
+
+	</div>
+
+		{{/unless}}
+	{{/each}}
+		
+		 <!--end of movie box -->
+	
+
+</div>
+
+<!-- ==============================================
+		WATCHED MOVIES
+=============================================== -->
+<div class='row' id='watched-container'>
+	{{#each movies}}
+		{{#if this.watched}}
+			<div class="col-lg-1 col-md-2 col-sm-6 col-xs-12" id="movie-box">
+       			<div class="watched-box">
+					<div class="card" id="watched-form">
+						<form action="/{{this.id}}?_method=PUT" method="POST" >
+                        	
+							<img class="img-responsive" id="watched-movies" src={{this.movie_poster}}>
+                        	<a href="/" class="overlay link" id="unwatch"><button type="submit" class="btn" id="unwatch-btn">Unwatch it</button></a>
+
+                    	</form>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+	{{/each}}
+
+</div>
+	
+	
+</main>
+
+<!-- ==============================================
+		FOOTER
+=============================================== -->
+<footer class="footer">
+	<div class="footer_text-box"> 
+		<p id="footer_text">© Asley Calixte, Raj Narula, Mariela Pascual   2018</p>
+	</div>
+
+</footer>
+
+
+<script>
+
+function modalDisplay(num) {
+		console.log(num);
+// Get the modal
+var modal = document.getElementById('myModal'+num);
+//console.log(modal);
+// Get the button that opens the modal
+var btn = document.getElementById("trigger-modal"+num);
+ modal.style.display = "block";
+ //embedUt(num);
+// Get the <span> element that closes the modal
+var span = document.getElementById('closeit'+num);
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+   
+//}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    	}
+	}
+}
+
+</script>
